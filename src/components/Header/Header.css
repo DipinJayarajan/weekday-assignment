@@ -1,6 +1,6 @@
 .header-main{
     height: 50px;
-    width: 100%;
+    /* width: 100%; */
     background-color: #FFF;
     display: flex;
     justify-content: flex-start;

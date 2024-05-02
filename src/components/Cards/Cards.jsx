@@ -1,8 +1,15 @@
 import React from 'react'
 
-const Cards = () => {
+const Cards = ( {jobDetails} ) => {
   return (
-    <div>Cards</div>
+    <div>
+        {jobDetails.map((data) => (
+                <div key={data.jdUid}>
+                    <p>{data.jobDetailsFromCompany} </p>
+                </div>
+            ))
+        }
+    </div>
   )
 }
 
