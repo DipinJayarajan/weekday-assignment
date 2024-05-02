@@ -22,6 +22,7 @@ const MainComponent = () => {
             })
 
             const data = response.data;
+            console.log(data)
             setJobDetails(data);
         }catch(error){
             console.log(error, "Error Fetching Details")
