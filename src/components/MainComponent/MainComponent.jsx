@@ -22,7 +22,7 @@
                     })
 
                     const { jdList } = response.data;
-                    console.log(jdList)
+  
                     setJobDetails(jdList);
                 }catch(error){
                     console.log(error, "Error Fetching Details")
