@@ -41,7 +41,8 @@ const MainComponent = () => {
 
   return (
     <div>
-
+        <Filter jobdetails={jobdetails} />
+        <Cards  jobdetails={jobdetails} />
     </div>
   )
 }
