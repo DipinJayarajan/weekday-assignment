@@ -27,7 +27,24 @@ const Cards = ({ jobDetails }) => {
             <p style={{fontSize:"14px", fontWeight:"400" }}>Estimated Salary: {data.maxJdSalary} to {data.minJdSalary || ""} LPA </p>
             <div>
             <p className="aboutCompany">About Company :</p>
-            <p className="companyDescription">{data.jobDetailsFromCompany} </p>
+            <p style={{
+                display: "-webkit-box",
+                WebkitLineClamp: 10,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+                position: "relative",
+                paddingRight: "1rem"
+              }}>
+                {data.jobDetailsFromCompany}
+                <span style={{
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  width: "100%",
+                  height: "100%",
+                  background: "linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff)"
+                }}></span>
+              </p>
             </div>
             <p style={{fontSize:"14px", color:"#8B8B8B", fontWeight:"700"}}>Minimum Experience</p>
             <p>{data.minExp || ""} years</p>
