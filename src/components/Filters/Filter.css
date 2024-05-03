@@ -1,0 +1,7 @@
+.filter-main{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 30px 30px;
+    gap: 80px;
+}
