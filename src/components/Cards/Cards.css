@@ -3,17 +3,17 @@
   flex-wrap: wrap;
   /* justify-content: center; */
   align-items: center;
-
+  line-height: 20px;
   padding: 30px;
   gap: 80px;
 
 }
 
 .cards-main{
-background-color: antiquewhite;
+background-color: #FFF;
 height: auto;
 width: 410px;
-padding: 5px 5px 5px 5px;
+padding: 15px 25px;
 /* transform: matrix(1.01, 0, 0, 1.01, 0, 0);
 transition: all 0.2s ease-in-out 0s; */
 outline: rgba(0, 0, 0, 0.87) dashed 0px;
@@ -22,3 +22,26 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px 0px;
 border-radius: 20px;
 }
 
+.jobCardHeader{
+  padding-top: 15px;
+  display: flex;
+  justify-content:flex-start;
+  gap: 10px;
+  align-items: start;
+}
+
+.cardHeaderDetails{
+  line-height: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.aboutCompany{
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.companyDescription{
+  font-size: 14px;
+  word-spacing: 1px;
+}

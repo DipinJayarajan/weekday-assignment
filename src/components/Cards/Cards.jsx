@@ -16,23 +16,25 @@ const Cards = ({ jobDetails }) => {
             size="small"
           />
           <div>
-            <div>
-              <Avatar aria-label="image"></Avatar>
-              <div>
+            <div className="jobCardHeader">
+              <Avatar style={{marginTop:"15px"}} aria-label="image"></Avatar>
+              <div className="cardHeaderDetails">
               <p>Weekday</p>
-              <p>{data.jobRole} </p>
-              <p>{data.location}</p>
+              <p>{data.jobRole.toUpperCase()} </p>
+              <p style={{fontSize:"11px"}}>{data.location.toUpperCase()}</p>
               </div>
             </div>
-            <p>Estimated Salary: {data.maxJdSalary} to {data.minJdSalary || ""} LPA </p>
+            <p style={{fontSize:"14px", fontWeight:"400" }}>Estimated Salary: {data.maxJdSalary} to {data.minJdSalary || ""} LPA </p>
             <div>
-            <title>About Company :</title>
-            <p>{data.jobDetailsFromCompany} </p>
+            <p className="aboutCompany">About Company :</p>
+            <p className="companyDescription">{data.jobDetailsFromCompany} </p>
             </div>
-            <p>Minimum Experience</p>
+            <p style={{fontSize:"14px", color:"#8B8B8B", fontWeight:"700"}}>Minimum Experience</p>
             <p>{data.minExp || ""} years</p>
           </div>
+          <div style={{display:"flex", justifyContent:"center"}}>
           <Button>⚡Easy apply</Button>
+          </div>
         </div>
       ))}
     </div>
