@@ -1,11 +1,12 @@
 import React from 'react'
+import "./Cards.css"
 
 const Cards = ( {jobDetails} ) => {
   return (
-    <div>
+    <div className='jobDetails-main'>
         {jobDetails.map((data) => (
-                <div key={data.jdUid}>
-                    <p>{data.jobDetailsFromCompany} </p>
+                <div key={data.jdUid} className='cards-main'>
+                    {/* <p>{data.jobDetailsFromCompany} </p> */}
                 </div>
             ))
         }
