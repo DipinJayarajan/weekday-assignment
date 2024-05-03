@@ -5,8 +5,6 @@ const AppStateContext = createContext();
 export const useAppState = () => useContext(AppStateContext);
 
 export const AppStateProvider = ({ children }) => {
-  // const [searchTerm, setSearchTerm] = useState('');
-  // Add other states here as needed
 
   const [ searchTerm, setSearchTerm ] = useState("")
 

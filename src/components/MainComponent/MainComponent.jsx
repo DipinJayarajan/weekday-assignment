@@ -2,9 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Filter from "../Filters/Filter";
 import Cards from "../Cards/Cards";
+import { useAppState } from "../../ContextApi/ContextProvider";
 
 const MainComponent = () => {
   const [jobDetails, setJobDetails] = useState([]);
+
+  const { searchTerm } = useAppState();
 
   const fetchJobs = async () => {
     const body = JSON.stringify({
@@ -42,10 +45,14 @@ const MainComponent = () => {
     fetchData();
   }, []);
 
+  const filteredJobs = jobDetails.filter(job => {
+    return job.companyName.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
   return (
     <div>
       <Filter jobDetails={jobDetails} />
-      <Cards jobDetails={jobDetails} />
+      <Cards jobDetails={filteredJobs} />
     </div>
   );
 };

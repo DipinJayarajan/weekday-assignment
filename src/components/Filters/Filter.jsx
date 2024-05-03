@@ -3,13 +3,7 @@ import React, { useState } from 'react'
 import "./Filter.css"
 import { useAppState } from '../../ContextApi/ContextProvider'
 
-const Filter = ({jobDetails}) => {
-
-  // const [ searchTerm, setSearchTerm ] = useState("")
-
-  // const handleSearchTerm = (event) => {
-  //   setSearchTerm(event.target.value)
-  // }
+const Filter = () => {
 
   const { searchTerm, setSearchTerm , handleSearchTerm } = useAppState();
 
