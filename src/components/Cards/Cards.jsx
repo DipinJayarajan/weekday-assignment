@@ -19,7 +19,7 @@ const Cards = ({ jobDetails }) => {
             <div className="jobCardHeader">
               <Avatar style={{marginTop:"15px"}} aria-label="image"></Avatar>
               <div className="cardHeaderDetails">
-              <p>Weekday</p>
+              <p>{data.companyName}</p>
               <p>{data.jobRole.toUpperCase()} </p>
               <p style={{fontSize:"11px"}}>{data.location.toUpperCase()}</p>
               </div>
@@ -49,8 +49,9 @@ const Cards = ({ jobDetails }) => {
             <p style={{fontSize:"14px", color:"#8B8B8B", fontWeight:"700"}}>Minimum Experience</p>
             <p>{data.minExp || ""} years</p>
           </div>
-          <div style={{display:"flex", justifyContent:"center"}}>
-          <Button>⚡Easy apply</Button>
+          <div style={{display:"flex",flexDirection:"column", justifyContent:"center"}}>
+          <Button variant="contained" style={{width:"100%",marginTop:"8px",backgroundColor:"rgb(0, 230, 150)", paddingTop:"10px", paddingBottom:"10px"}}>⚡Easy Apply</Button>
+          <Button variant="contained" style={{width:"100%",marginTop:"8px",backgroundColor:"rgb(0,150, 250)", paddingTop:"10px", paddingBottom:"10px"}}>Unlock Referrals ask</Button>
           </div>
         </div>
       ))}
