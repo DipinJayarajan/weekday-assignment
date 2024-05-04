@@ -68,21 +68,6 @@ const Cards = ({ jobDetails }) => {
             <Button style={{position:"absolute",top:"85%", right:"40%", zIndex:"30", fontWeight:"600"}}>
               Show More
             </Button>
-            {/* <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-            >
-              <Box style={{position:"absolute", top:"50%", right:"50%", background:"transparent", }}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Job Description
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {data.jobDetailsFromCompany}
-          </Typography>
-        </Box>
-            </Modal> */}
               </p>
             </div>
             <p style={{fontSize:"14px", color:"#8B8B8B", fontWeight:"700"}}>Minimum Experience</p>

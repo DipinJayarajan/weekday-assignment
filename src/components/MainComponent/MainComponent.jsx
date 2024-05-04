@@ -7,6 +7,7 @@ import { useAppState } from "../../ContextApi/ContextProvider";
 const MainComponent = () => {
   const [jobDetails, setJobDetails] = useState([]);
   const [filteredRoleJobs, setFilteredRoleJobs] = useState([]);
+  const [filteredExp, setFilteredExp] = useState([]);
 
   const { searchTerm } = useAppState();
 
@@ -60,9 +61,18 @@ const MainComponent = () => {
     }
   };
 
+  const handleExpeChange = (selectedExp) => {
+    if (selectedExp === "") {
+      setFilteredExp(jobDetails); // If no role is selected, show all jobs
+    } else {
+      const filtered = jobDetails.filter(job => job.minExp === selectedExp);
+      setFilteredExp(filtered); // Filter jobs based on selected role
+    }
+  };
+
   return (
     <div>
-      <Filter jobDetails={jobDetails} onRoleChange={handleRoleChange} />
+      <Filter jobDetails={jobDetails} onRoleChange={handleRoleChange} handleExpeChange={handleExpeChange}  />
       <Cards jobDetails={filteredJobs} filteredRoleJobs={filteredRoleJobs} />
     </div>
   );
