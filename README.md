@@ -14,6 +14,6 @@ This assignment for Weekday involves creating a job listing where users can filt
 : To run the application locally, follow these steps:
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
-3. Install dependencies by running the command:
+3. Install dependencies by running the command: npm install
 4. Start the development server by running the command npm run dev since we are using vite.
 
