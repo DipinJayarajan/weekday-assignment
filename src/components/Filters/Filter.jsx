@@ -5,11 +5,12 @@ import { useAppState } from '../../ContextApi/ContextProvider'
 
 const Filter = ({jobDetails, onRoleChange}) => {
 
-  const { searchTerm, setSearchTerm , handleSearchTerm, handleExpeChange } = useAppState();
+  const { searchTerm, setSearchTerm , handleSearchTerm, handleExpeChange, handlePayChange } = useAppState();
 
   // States for roles
   const [role, setRole] = useState('');
   const [exp, setExp] = useState('');
+  const [pay, setPay] = useState('');
 
   const handleRoleChange = (event) => {
     const selectedRole = event.target.value;
@@ -21,6 +22,12 @@ const Filter = ({jobDetails, onRoleChange}) => {
     const selectExp = event.target.value;
     setExp(selectExp)
     handleExpeChange(selectExp);
+  }
+
+  const payHandleChange = (event) =>{
+    const selectPay = event.target.value;
+    setPay(selectPay)
+    handlePayChange(selectPay)
   }
 
 
@@ -72,6 +79,27 @@ const Filter = ({jobDetails, onRoleChange}) => {
           ))}
         </Select>
       </FormControl>
+
+
+      {/* min base pay salary */}
+      <FormControl sx={{ m: 1, minWidth: 195 }}>
+        <InputLabel id="demo-simple-select-helper-label">Min Pay</InputLabel>
+        <Select
+          labelId="demo-simple-select-helper-label"
+          id="demo-simple-select-helper"
+          value={pay}
+          label="Min_pay"
+          onChange={payHandleChange}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          {jobDetails.map(job => (
+            <MenuItem key={job.jobId} value={job.maxJdSalary}>{job.maxJdSalary}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+
 
     </div>
   )

@@ -8,6 +8,7 @@ const MainComponent = () => {
   const [jobDetails, setJobDetails] = useState([]);
   const [filteredRoleJobs, setFilteredRoleJobs] = useState([]);
   const [filteredExp, setFilteredExp] = useState([]);
+  const [filteredPay, setFilteredPay] = useState([]);
 
   const { searchTerm } = useAppState();
 
@@ -70,9 +71,18 @@ const MainComponent = () => {
     }
   };
 
+  const handlePayChange = (selectPay) =>{
+    if (selectPay === ""){
+      setFilteredPay(jobDetails);
+    }else {
+      const filtered = jobDetails.filter(job => job.maxJdSalary === setFilteredPay);
+      setFilteredPay(filtered); // Filter jobs based on selected role
+    }
+  }
+
   return (
     <div>
-      <Filter jobDetails={jobDetails} onRoleChange={handleRoleChange} handleExpeChange={handleExpeChange}  />
+      <Filter jobDetails={jobDetails} onRoleChange={handleRoleChange} handleExpeChange={handleExpeChange} handlePayChange={handlePayChange}  />
       <Cards jobDetails={filteredJobs} filteredRoleJobs={filteredRoleJobs} />
     </div>
   );
