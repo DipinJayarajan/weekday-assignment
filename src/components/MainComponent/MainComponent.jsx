@@ -6,6 +6,7 @@ import { useAppState } from "../../ContextApi/ContextProvider";
 
 const MainComponent = () => {
   const [jobDetails, setJobDetails] = useState([]);
+  const [filteredRoleJobs, setFilteredRoleJobs] = useState([]);
 
   const { searchTerm } = useAppState();
 
@@ -29,6 +30,7 @@ const MainComponent = () => {
       const { jdList } = response.data;
 
       setJobDetails(jdList);
+      setFilteredRoleJobs(jdList)
     } catch (error) {
       console.log(error, "Error Fetching Details");
     }
@@ -49,10 +51,19 @@ const MainComponent = () => {
     return job.companyName.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
+  const handleRoleChange = (selectedRole) => {
+    if (selectedRole === "") {
+      setFilteredRoleJobs(jobDetails); // If no role is selected, show all jobs
+    } else {
+      const filtered = jobDetails.filter(job => job.jobRole === selectedRole);
+      setFilteredRoleJobs(filtered); // Filter jobs based on selected role
+    }
+  };
+
   return (
     <div>
-      <Filter jobDetails={jobDetails} />
-      <Cards jobDetails={filteredJobs} />
+      <Filter jobDetails={jobDetails} onRoleChange={handleRoleChange} />
+      <Cards jobDetails={filteredJobs} filteredRoleJobs={filteredRoleJobs} />
     </div>
   );
 };
